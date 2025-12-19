@@ -65,7 +65,7 @@ model.load_state_dict(torch.load("model/cifar10Model25.pth", weights_only=True))
 model.eval()
 
 
-image_path = "inputs/bird.png"
+image_path = "inputs/truck.png"
 
 image = Image.open(image_path).convert('RGB')
 image_arr = np.array(image)
