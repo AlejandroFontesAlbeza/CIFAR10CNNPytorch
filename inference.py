@@ -5,6 +5,8 @@ from torchvision import transforms
 import pandas as pd
 from PIL import Image
 import time
+from matplotlib import pyplot as plt
+import numpy as np
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -63,14 +65,12 @@ model.load_state_dict(torch.load("model/cifar10Model25.pth", weights_only=True))
 model.eval()
 
 
-image_path = "inputs/car.png"
+image_path = "inputs/bird.png"
 
 image = Image.open(image_path).convert('RGB')
+image_arr = np.array(image)
 image = transform(image)
 image = image.unsqueeze(0)
-
-
-
 
 
 with torch.no_grad():
@@ -83,4 +83,9 @@ with torch.no_grad():
 
 predicted_class_name = classes[predicted_class_index]
 
-print(predicted_class_name)
+plt.figure(figsize=((5,5)))
+plt.title(f"class: {predicted_class_name}")
+plt.imshow(image_arr)
+plt.savefig("resources/inference_image.png")
+plt.close
+
