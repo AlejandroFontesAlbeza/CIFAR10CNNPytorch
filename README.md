@@ -1,4 +1,4 @@
-# CIFAR 10 - CNN  Pytorch
+# CIFAR 10 - CNN  <img src="resources/PytorchLogo.png" width="100"/>
 
 This project implements a Convolutional Neural Network (CNN) using PyTorch to classify images from the CIFAR-10 dataset.
 
