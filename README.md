@@ -74,7 +74,7 @@ The implemented model is a simple effective CNN, designed to clearly demonstrate
 
 - Output layer with 10 classes
 
-`Next image do not represent exactly de model architectura I've made, is a simple representation`: 
+`Next images do not represent exactly de model architectura I've made, is a simple representation`: 
 
 
 <p align = "center">
