@@ -117,7 +117,7 @@ Training time for **1 epoch (training + validation)** was compared using:
 </p>
 
 
-In anther repo project using **MNIST** https://github.com/AlejandroFontesAlbeza/nnMNISTPytorch with a simple **fully connected network (MLP)**, the training speed difference between CPU and GPU was negligible.
+In another repo project using **MNIST** https://github.com/AlejandroFontesAlbeza/nnMNISTPytorch with a simple **fully connected network (MLP)**, the training speed difference between CPU and GPU was negligible.
 
 However, for this project:
 
@@ -163,4 +163,18 @@ Based on this observation, the model was retrained for **25 epochs.**
 
 <p align = "left">
     <img src = "resources/grafica.png" alt = "CPU time" width = "500"/>
+</p>
+
+---
+
+## Inference
+
+The `inference.py` script performs predictions on external images stored in the inputs directory.
+
+<p align = "left">
+    <img src = "resources/inference_image_bird.png" alt = "CPU time" width = "200"/>
+    <img src = "resources/inference_image_car.png" alt = "CPU time" width = "200"/>
+    <img src = "resources/inference_image_dog.png" alt = "CPU time" width = "200"/>
+    <img src = "resources/inference_image_horse.png" alt = "CPU time" width = "200"/>
+    <img src = "resources/inference_image_truck.png" alt = "CPU time" width = "200"/>
 </p>
