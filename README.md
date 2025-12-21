@@ -171,9 +171,36 @@ Based on this observation, the model was retrained for **25 epochs.**
 
 The `inference.py` script performs predictions on external images stored in the inputs directory.
 
+During the inference de arquitecture and the weights of the model are loaded, the images are preprocessed for the model and the class predicted is displayed as the image:
+
 <p align = "left">
     <img src = "resources/inference_image_bird.png" alt = "CPU time" width = "200"/>
     <img src = "resources/inference_image_car.png" alt = "CPU time" width = "200"/>
     <img src = "resources/inference_image_dog.png" alt = "CPU time" width = "200"/>
     <img src = "resources/inference_image_horse.png" alt = "CPU time" width = "200"/>
 </p>
+
+As the accuracy of the training was a **~80%** we can see that 3 out of the 4 images are correctly classified but the bird image is classified as a cat.
+
+
+---
+
+## Conclusions
+
+This project demonstrates that even a relatively simple convolutional architecture can achieve solid performance on **CIFAR-10**, reaching approximately **80%** validation accuracy when trained efficiently and with proper regularization. By analyzing the training curves, it became clear that extending training beyond **~25–30 epochs** led to diminishing returns and signs of overfitting, reinforcing the importance of monitoring validation metrics rather than blindly increasing training time.
+
+From an architectural perspective, this model sits in an important middle ground: it is significantly more powerful than a **fully connected network** (such as those commonly used for *MNIST*), yet far simpler than modern state-of-the-art architectures like **ResNet** or **EfficientNet**. This makes it especially valuable as a learning tool, since all core CNN components—convolutions, pooling, batch normalization, dropout, and fully connected layers—are explicitly visible and easy to reason about.
+
+The project also highlights a key practical insight: **GPU acceleration** becomes truly beneficial once convolutional operations are introduced. While linear models show little difference between **CPU** and **GPU** training times, convolutional networks benefit greatly from the parallelism offered by **GPUs**, even on consumer-grade hardware.
+
+*There are many possible directions for improvement. On the modeling side, deeper architectures, residual connections, or global average pooling could be explored. On the training side, data augmentation, learning rate scheduling, early stopping, and more advanced regularization techniques could further improve generalization. Evaluation could also be expanded with confusion matrices or per-class metrics to better understand model behavior.*
+
+Overall, this project serves as a strong foundation for more advanced computer vision tasks. It bridges the gap between simple classification models and modern deep learning systems, providing both practical experience and conceptual understanding that can be directly transferred to more complex architectures and real-world applications.
+
+---
+
+## References
+
+- **NeuralNine** - *Clasificación de imágenes CNN en Pytorch*: https://www.youtube.com/watch?v=CtzfbUwrYGI&t=1662s
+- **Devoxx** - *Tensorflow and deep learning - without a PhD by Martin Görner*: https://www.youtube.com/watch?v=vq2nnJ4g6N0&t=5354s
+- W**ill Cukierski. CIFAR-10** - *Object Recognition in Images*. https://kaggle.com/competitions/cifar-10, 2013. **Kaggle**.
