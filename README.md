@@ -176,5 +176,4 @@ The `inference.py` script performs predictions on external images stored in the 
     <img src = "resources/inference_image_car.png" alt = "CPU time" width = "200"/>
     <img src = "resources/inference_image_dog.png" alt = "CPU time" width = "200"/>
     <img src = "resources/inference_image_horse.png" alt = "CPU time" width = "200"/>
-    <img src = "resources/inference_image_truck.png" alt = "CPU time" width = "200"/>
 </p>
